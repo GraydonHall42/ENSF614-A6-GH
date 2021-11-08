@@ -1,4 +1,4 @@
-/* ENSF 614 - Lab 6 Exercise C and D
+package ExC_D_StrategyPattern;/* ENSF 614 - Lab 6 Exercise C and D
  * M. Moussavi, October 2021
  * 
  */

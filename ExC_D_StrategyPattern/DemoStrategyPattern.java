@@ -1,4 +1,4 @@
-/* ENSF 614 - Lab 6 - Exercise C and D
+package ExC_D_StrategyPattern;/* ENSF 614 - Lab 6 - Exercise C and D
  * M. Moussavi, October 2021
  */
 
@@ -31,21 +31,36 @@ public class DemoStrategyPattern {
         System.out.println("\nThe values in MyVector object v1 after performing BoubleSorter is:");
 		v1.display();
 		
-		// create a MyVector<Integer> object V2 
+		// create a MyVector<Integer> object V2
 		MyVector<Integer> v2 = new MyVector<Integer> (50);
-		
+
 		// populate v2 with 5 randomly generated numbers
 		for(int i = 4; i >=0; i--) {
 			Item<Integer> item;
 			item = new Item<Integer> (Integer.valueOf(rand.nextInt(50)));
 			v2.add(item);
 			}
-		   
+
 	        System.out.println("\nThe original values in v2 object are:");
 			v2.display();
 			v2.setSortStrategy(new InsertionSorter<Integer>());;
 			v2.performSort();
 	        System.out.println("\nThe values in MyVector object v2 after performing InsertionSorter is:");
-			v2.display();	
+			v2.display();
+
+		// add code to test selection sort for part D
+		MyVector<Integer> v3 = new MyVector<Integer> (50);
+		for(int i = 4; i >=0; i--) {
+			Item<Integer> item;
+			item = new Item<Integer> (Integer.valueOf(rand.nextInt(50)));
+			v3.add(item);
+		}
+
+		System.out.println("\nThe original values in v3 object are:");
+		v3.display();
+		v3.setSortStrategy(new SelectionSorter<Integer>());;
+		v3.performSort();
+		System.out.println("\nThe values in MyVector object v3 after performing SelectionSorter is:");
+		v3.display();
 	}
 }

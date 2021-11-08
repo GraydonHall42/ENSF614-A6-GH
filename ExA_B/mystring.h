@@ -58,7 +58,7 @@ public:
 
   
   // IS THIS THE BEST WAY TO DO THIS
-  
+
   bool operator >= (const Mystring& rhs) const {return rhs.charsM >= this->charsM;} 
   bool operator > (const Mystring& rhs) const {return rhs.charsM > this->charsM;}  
   bool operator <= (const Mystring& rhs) const {return rhs.charsM <= this->charsM;} 
@@ -67,6 +67,7 @@ public:
   bool operator != (const Mystring& rhs) const {return rhs.charsM != this->charsM;} 
   char& operator[](int elem) const {return charsM[elem];}
   
+  // alternate solution using friend functions
   // friend bool operator >= (const Mystring& s1, const Mystring& s2){return s2.charsM >= s1.charsM;}  
   // friend bool operator > (const Mystring& s1, const Mystring& s2){return s2.charsM > s1.charsM;}
   // friend bool operator <= (const Mystring& s1, const Mystring& s2){return s2.charsM <= s1.charsM;}
@@ -75,9 +76,6 @@ public:
   // friend bool operator != (const Mystring& s1, const Mystring& s2){return s2.charsM != s1.charsM;}
 
   
-
-  
-
   friend ostream& operator << (ostream& os, const Mystring &s){return os<<s.charsM;}
   static int my_strcmp(const char *str1, const char *str2);
 
