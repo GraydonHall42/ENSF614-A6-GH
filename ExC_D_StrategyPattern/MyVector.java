@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class MyVector <E extends Number & Comparable<E>>{
     protected ArrayList<Item<E>> storageM;
     protected Sorter sorter;
-    private static DecimalFormat df = new DecimalFormat("0.00");
+    private DecimalFormat df = new DecimalFormat("0.0");
 
 
     // set sorting strategy
